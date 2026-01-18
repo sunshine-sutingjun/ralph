@@ -21,8 +21,20 @@ import { TurnEngine, SessionState, CommandType, GuidanceType } from './turn-engi
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const promptsDir = resolve(__dirname, '..', 'prompts');
 
-// Valid PRD types that have corresponding prompt files
-const VALID_PRD_TYPES = ['code', 'orchestrator', 'testing'];
+// Valid task types that have corresponding prompt files
+// Maps taskType to prompt file name
+const VALID_TASK_TYPES = {
+  'code': 'code.md',
+  'research': 'research.md',
+  'content': 'content.md',
+  'data': 'data.md',
+  'devops': 'devops.md',
+  'testing': 'testing.md',
+  'orchestrator': 'orchestrator.md',
+};
+
+// For backwards compatibility
+const VALID_PRD_TYPES = Object.keys(VALID_TASK_TYPES);
 
 /**
  * Session Manager - Coordinates multiple Ralph sessions
@@ -99,13 +111,13 @@ export class SessionManager extends EventEmitter {
     const prdStorage = new PrdStorage(prdPath);
     const prdData = prdStorage.read();
 
-    // Validate PRD type has a corresponding prompt file
-    const prdType = prdData.type || 'code';
-    if (!VALID_PRD_TYPES.includes(prdType)) {
-      const promptPath = resolve(promptsDir, `${prdType}.md`);
+    // Validate PRD taskType has a corresponding prompt file
+    const taskType = prdData.taskType || 'code';
+    if (!VALID_PRD_TYPES.includes(taskType)) {
+      const promptPath = resolve(promptsDir, `${taskType}.md`);
       if (!existsSync(promptPath)) {
         throw new Error(
-          `Invalid PRD type "${prdType}". Valid types are: ${VALID_PRD_TYPES.join(', ')}. ` +
+          `Invalid taskType "${taskType}". Valid types are: ${VALID_PRD_TYPES.join(', ')}. ` +
           `If you need a custom type, create ${promptPath} first.`
         );
       }

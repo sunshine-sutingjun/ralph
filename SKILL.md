@@ -22,7 +22,8 @@ Create a project folder and prd.json:
 
 ```json
 {
-  "description": "Brief description of the feature",
+  "description": "Brief description of the project",
+  "taskType": "code",
   "branchName": "feature/my-feature",
   "userStories": [
     {
@@ -30,8 +31,7 @@ Create a project folder and prd.json:
       "title": "Short descriptive title",
       "description": "As a [user], I want [feature] so that [benefit]",
       "acceptanceCriteria": [
-        "Specific testable criterion",
-        "Typecheck passes"
+        "Specific testable criterion"
       ],
       "priority": 1,
       "passes": false
@@ -39,6 +39,18 @@ Create a project folder and prd.json:
   ]
 }
 ```
+
+### Task Types
+
+Ralph supports multiple task types via the `taskType` field in PRD:
+
+- **code** - Software development (web, backend, CLI, etc.)
+- **research** - Research, analysis, data collection
+- **content** - Documentation, blogs, writing
+- **data** - Data processing, ETL, analytics, reports
+- **devops** - Infrastructure, deployment, configuration
+- **testing** - Automated testing and QA
+- **orchestrator** - Coordinate multiple sub-tasks
 
 ### Story Guidelines
 
