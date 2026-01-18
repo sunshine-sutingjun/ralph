@@ -132,10 +132,17 @@ export class SessionManager extends EventEmitter {
       maxTurns,
       workingDirectory: workingDirectory || dirname(prdPath),
       storiesTotal: prdData.userStories.length,
+      contextMap: prdData.contextMap || null,
+      requiredSkills: prdData.requiredSkills || [],
     });
 
     // Create turn engine but don't start yet
-    const engine = new TurnEngine(sessionId, { model, maxTurns });
+    const engine = new TurnEngine(sessionId, { 
+      model, 
+      maxTurns,
+      contextMap: prdData.contextMap || null,
+      requiredSkills: prdData.requiredSkills || [],
+    });
     await engine.initialize();
 
     // Wire up events
