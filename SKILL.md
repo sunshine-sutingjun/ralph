@@ -17,9 +17,40 @@ Ralph is an autonomous agent skill that breaks complex projects into user storie
 When you tell your AI "use Ralph" or "use the Ralph skill":
 
 1. Your AI reads this SKILL.md to understand what Ralph does
-2. Your AI creates a PRD (project requirements document)
+2. Your AI either:
+   - **Option A (Manual)**: You provide a PRD file
+   - **Option B (Automatic - Recommended)**: AI analyzes your project and generates a PRD
 3. Your AI runs Ralph to execute the project automatically
 4. Ralph breaks the work into user stories and completes them one by one
+
+## Two Ways to Use Ralph
+
+### Option A: You Write the PRD (Manual)
+
+If you have a well-defined PRD already:
+```bash
+# You create prd.json with all details
+ralph.mjs create --prd path/to/prd.json --start
+```
+
+### Option B: AI Generates the PRD (Recommended)
+
+Tell your AI what you want to do:
+
+```
+"I want to write an MCM paper. My code is in src/, 
+experimental results in results/, and references in refs/. 
+I have qmd-writing, qmd-rendering, and citation skills installed."
+```
+
+Your AI will:
+1. Scan your project structure
+2. Identify code files, data, and documentation
+3. Check what skills are available
+4. Auto-generate a complete PRD with contextMap and requiredSkills
+5. Run Ralph with the generated PRD
+
+This is the **recommended approach** because your AI can be smarter about understanding your project than a static PRD file.
 
 ## Installation
 
@@ -151,6 +182,23 @@ A complete example is in `examples/mcm-paper-prd.json` showing:
 - Resource mapping for each section  
 - Referenced skills for formatting and visualization
 - Experimental results tied to specific sections
+
+## For AI Systems: Automatic PRD Generation
+
+If you're building an AI system that uses Ralph:
+
+1. **Read the PRD Generator guide**: `docs/PRD_GENERATOR.md`
+   - Step-by-step process for analyzing projects
+   - How to map resources to user stories
+   - How to identify needed capabilities
+
+2. **Follow the AI Workflow**: `docs/AI_WORKFLOW.md`
+   - Exact steps your AI should take
+   - How to analyze project structure
+   - How to generate PRDs automatically
+   - How to run Ralph and monitor progress
+
+The key insight: Let your AI analyze the actual project and generate a smart PRD, rather than having users manually write PRDs.
 
 ### Story Guidelines
 

@@ -1,205 +1,229 @@
 {
-  "description": "MCM Mathematical Modeling Competition - Paper Writing",
-  "taskType": "content",
-  "writingFormat": "qmd",
-  "outline": [
-    { "id": "intro", "title": "Introduction", "section": 1 },
-    { "id": "literature", "title": "Literature Review", "section": 2 },
-    { "id": "methodology", "title": "Methodology", "section": 3 },
-    { "id": "results", "title": "Results and Analysis", "section": 4 },
-    { "id": "discussion", "title": "Discussion", "section": 5 },
-    { "id": "conclusion", "title": "Conclusion", "section": 6 }
-  ],
-  "requiredSkills": [
-    "QMD formatting and mathematical notation support",
-    "Figure and visualization insertion",
-    "Document compilation and rendering"
-  ],
-  "contextMap": {
-    "intro": {
-      "problem_statement": "problems/problem_statement.md",
-      "references": [
-        "references/introduction.bib",
-        "references/background.md"
-      ]
-    },
-    "literature": {
-      "references": [
-        "references/literature_review.bib",
-        "references/key_papers.md"
-      ],
-      "explanation": "docs/literature_guide.md"
-    },
-    "methodology": {
-      "references": [
-        "references/methods.bib"
-      ],
-      "explanation": "docs/methodology_notes.md",
-      "code_files": [
-        "src/model.py",
-        "src/algorithms.py"
-      ]
-    },
-    "results": {
-      "explanation": "docs/results_guide.md",
-      "result_map": "docs/results_usage.md",
-      "experiments": [
+    "description": "MCM Mathematical Modeling Competition - Paper Writing",
+    "taskType": "content",
+    "writingFormat": "qmd",
+    "outline": [
         {
-          "name": "experiment_1",
-          "title": "Small-scale test case",
-          "code": "src/experiment1.py",
-          "output": "results/exp1_output.json",
-          "visualization": "results/exp1_plot.png"
+            "id": "intro",
+            "title": "Introduction",
+            "section": 1
         },
         {
-          "name": "experiment_2",
-          "title": "Large-scale validation",
-          "code": "src/experiment2.py",
-          "output": "results/exp2_output.json",
-          "visualization": "results/exp2_plot.png"
+            "id": "literature",
+            "title": "Literature Review",
+            "section": 2
         },
         {
-          "name": "experiment_3",
-          "title": "Sensitivity analysis",
-          "code": "src/experiment3.py",
-          "output": "results/exp3_sensitivity.json",
-          "visualization": "results/exp3_heatmap.png"
+            "id": "methodology",
+            "title": "Methodology",
+            "section": 3
+        },
+        {
+            "id": "results",
+            "title": "Results and Analysis",
+            "section": 4
+        },
+        {
+            "id": "discussion",
+            "title": "Discussion",
+            "section": 5
+        },
+        {
+            "id": "conclusion",
+            "title": "Conclusion",
+            "section": 6
         }
-      ]
+    ],
+    "requiredSkills": [
+        "QMD formatting and mathematical notation support",
+        "Figure and visualization insertion",
+        "Document compilation and rendering"
+    ],
+    "contextMap": {
+        "intro": {
+            "problem_statement": "problems/problem_statement.md",
+            "references": [
+                "references/introduction.bib",
+                "references/background.md"
+            ]
+        },
+        "literature": {
+            "references": [
+                "references/literature_review.bib",
+                "references/key_papers.md"
+            ],
+            "explanation": "docs/literature_guide.md"
+        },
+        "methodology": {
+            "references": [
+                "references/methods.bib"
+            ],
+            "explanation": "docs/methodology_notes.md",
+            "code_files": [
+                "src/model.py",
+                "src/algorithms.py"
+            ]
+        },
+        "results": {
+            "explanation": "docs/results_guide.md",
+            "result_map": "docs/results_usage.md",
+            "experiments": [
+                {
+                    "name": "experiment_1",
+                    "title": "Small-scale test case",
+                    "code": "src/experiment1.py",
+                    "output": "results/exp1_output.json",
+                    "visualization": "results/exp1_plot.png"
+                },
+                {
+                    "name": "experiment_2",
+                    "title": "Large-scale validation",
+                    "code": "src/experiment2.py",
+                    "output": "results/exp2_output.json",
+                    "visualization": "results/exp2_plot.png"
+                },
+                {
+                    "name": "experiment_3",
+                    "title": "Sensitivity analysis",
+                    "code": "src/experiment3.py",
+                    "output": "results/exp3_sensitivity.json",
+                    "visualization": "results/exp3_heatmap.png"
+                }
+            ]
+        },
+        "discussion": {
+            "references": [
+                "references/discussion.bib"
+            ],
+            "explanation": "docs/discussion_notes.md"
+        },
+        "conclusion": {
+            "references": [
+                "references/conclusion.bib"
+            ]
+        }
     },
-    "discussion": {
-      "references": [
-        "references/discussion.bib"
-      ],
-      "explanation": "docs/discussion_notes.md"
-    },
-    "conclusion": {
-      "references": [
-        "references/conclusion.bib"
-      ]
-    }
-  },
-  "userStories": [
-    {
-      "id": "US001",
-      "title": "Write Introduction section",
-      "description": "Create a compelling introduction that frames the problem and motivates the approach",
-      "section": "intro",
-      "acceptanceCriteria": [
-        "Read problem_statement.md to understand the problem",
-        "Read all references in intro contextMap",
-        "Write 300-500 word introduction",
-        "Include problem overview, motivation, and approach preview",
-        "Properly cite sources",
-        "Use QMD formatting for any mathematical notation"
-      ],
-      "priority": 1,
-      "passes": false
-    },
-    {
-      "id": "US002",
-      "title": "Write Literature Review section",
-      "description": "Comprehensive literature review of relevant work",
-      "section": "literature",
-      "acceptanceCriteria": [
-        "Read all literature references and the literature_guide.md",
-        "Summarize key papers and their relevance",
-        "Organize by theme or chronology",
-        "Include at least 10-15 citations",
-        "Write 800-1200 words",
-        "Highlight gaps that your work addresses"
-      ],
-      "priority": 1,
-      "passes": false
-    },
-    {
-      "id": "US003",
-      "title": "Write Methodology section",
-      "description": "Explain the mathematical models and implementation approach",
-      "section": "methodology",
-      "acceptanceCriteria": [
-        "Read methodology_notes.md",
-        "Read the model.py and algorithms.py source code",
-        "Explain mathematical models with clear notation",
-        "Include key equations (use QMD math formatting)",
-        "Describe algorithm pseudocode or implementation details",
-        "Use qmd-writing skill to properly format equations and code",
-        "Include code snippets with explanations",
-        "Write 1000-1500 words"
-      ],
-      "priority": 1,
-      "passes": false
-    },
-    {
-      "id": "US004",
-      "title": "Write Results and Analysis section",
-      "description": "Present experimental results with clear analysis",
-      "section": "results",
-      "acceptanceCriteria": [
-        "Read results_guide.md and results_usage.md to understand which results apply where",
-        "For each experiment:",
-        "  - Read the experiment code and output files",
-        "  - Understand what the results show",
-        "  - Create narrative explaining the results",
-        "Insert experiment visualizations using qmd-rendering skill",
-        "Include tables summarizing key metrics",
-        "Compare results across experiments",
-        "Discuss what results mean for the problem",
-        "Write 1200-1500 words",
-        "Include at least 3-4 figures and 2-3 tables"
-      ],
-      "priority": 1,
-      "passes": false
-    },
-    {
-      "id": "US005",
-      "title": "Write Discussion section",
-      "description": "Interpret results and discuss implications",
-      "section": "discussion",
-      "acceptanceCriteria": [
-        "Read discussion_notes.md and relevant references",
-        "Discuss how results answer the problem",
-        "Compare with results from literature",
-        "Discuss limitations and assumptions",
-        "Suggest future work or extensions",
-        "Connect back to introduction",
-        "Write 600-800 words"
-      ],
-      "priority": 1,
-      "passes": false
-    },
-    {
-      "id": "US006",
-      "title": "Write Conclusion section",
-      "description": "Summarize key findings and contributions",
-      "section": "conclusion",
-      "acceptanceCriteria": [
-        "Read conclusion references",
-        "Summarize the main contributions",
-        "Highlight key findings",
-        "Restate practical significance",
-        "Write 200-300 words",
-        "Ensure it mirrors the introduction's scope"
-      ],
-      "priority": 1,
-      "passes": false
-    },
-    {
-      "id": "US007",
-      "title": "Format and finalize paper",
-      "description": "Final formatting, QMD compilation, and quality check",
-      "section": "final",
-      "acceptanceCriteria": [
-        "Use qmd-rendering skill to compile the full document",
-        "Check all figures and tables render correctly",
-        "Verify all cross-references work",
-        "Check formatting consistency throughout",
-        "Verify all citations are properly formatted",
-        "Check page length requirements",
-        "Output final PDF"
-      ],
-      "priority": 2,
-      "passes": false
-    }
-  ]
+    "userStories": [
+        {
+            "id": "US001",
+            "title": "Write Introduction section",
+            "description": "Create a compelling introduction that frames the problem and motivates the approach",
+            "section": "intro",
+            "acceptanceCriteria": [
+                "Read problem_statement.md to understand the problem",
+                "Read all references in intro contextMap",
+                "Write 300-500 word introduction",
+                "Include problem overview, motivation, and approach preview",
+                "Properly cite sources",
+                "Use QMD formatting for any mathematical notation"
+            ],
+            "priority": 1,
+            "passes": false
+        },
+        {
+            "id": "US002",
+            "title": "Write Literature Review section",
+            "description": "Comprehensive literature review of relevant work",
+            "section": "literature",
+            "acceptanceCriteria": [
+                "Read all literature references and the literature_guide.md",
+                "Summarize key papers and their relevance",
+                "Organize by theme or chronology",
+                "Include at least 10-15 citations",
+                "Write 800-1200 words",
+                "Highlight gaps that your work addresses"
+            ],
+            "priority": 1,
+            "passes": false
+        },
+        {
+            "id": "US003",
+            "title": "Write Methodology section",
+            "description": "Explain the mathematical models and implementation approach",
+            "section": "methodology",
+            "acceptanceCriteria": [
+                "Read methodology_notes.md",
+                "Read the model.py and algorithms.py source code",
+                "Explain mathematical models with clear notation",
+                "Include key equations (use QMD math formatting)",
+                "Describe algorithm pseudocode or implementation details",
+                "Use qmd-writing skill to properly format equations and code",
+                "Include code snippets with explanations",
+                "Write 1000-1500 words"
+            ],
+            "priority": 1,
+            "passes": false
+        },
+        {
+            "id": "US004",
+            "title": "Write Results and Analysis section",
+            "description": "Present experimental results with clear analysis",
+            "section": "results",
+            "acceptanceCriteria": [
+                "Read results_guide.md and results_usage.md to understand which results apply where",
+                "For each experiment:",
+                "  - Read the experiment code and output files",
+                "  - Understand what the results show",
+                "  - Create narrative explaining the results",
+                "Insert experiment visualizations using qmd-rendering skill",
+                "Include tables summarizing key metrics",
+                "Compare results across experiments",
+                "Discuss what results mean for the problem",
+                "Write 1200-1500 words",
+                "Include at least 3-4 figures and 2-3 tables"
+            ],
+            "priority": 1,
+            "passes": false
+        },
+        {
+            "id": "US005",
+            "title": "Write Discussion section",
+            "description": "Interpret results and discuss implications",
+            "section": "discussion",
+            "acceptanceCriteria": [
+                "Read discussion_notes.md and relevant references",
+                "Discuss how results answer the problem",
+                "Compare with results from literature",
+                "Discuss limitations and assumptions",
+                "Suggest future work or extensions",
+                "Connect back to introduction",
+                "Write 600-800 words"
+            ],
+            "priority": 1,
+            "passes": false
+        },
+        {
+            "id": "US006",
+            "title": "Write Conclusion section",
+            "description": "Summarize key findings and contributions",
+            "section": "conclusion",
+            "acceptanceCriteria": [
+                "Read conclusion references",
+                "Summarize the main contributions",
+                "Highlight key findings",
+                "Restate practical significance",
+                "Write 200-300 words",
+                "Ensure it mirrors the introduction's scope"
+            ],
+            "priority": 1,
+            "passes": false
+        },
+        {
+            "id": "US007",
+            "title": "Format and finalize paper",
+            "description": "Final formatting, QMD compilation, and quality check",
+            "section": "final",
+            "acceptanceCriteria": [
+                "Use qmd-rendering skill to compile the full document",
+                "Check all figures and tables render correctly",
+                "Verify all cross-references work",
+                "Check formatting consistency throughout",
+                "Verify all citations are properly formatted",
+                "Check page length requirements",
+                "Output final PDF"
+            ],
+            "priority": 2,
+            "passes": false
+        }
+    ]
 }
