@@ -173,30 +173,55 @@ For the project, identify what capabilities are needed:
 {
   "description": "Write MCM competition paper",
   "taskType": "content",
-  "branchName": "paper/mcm-2026",
   "requiredSkills": [ ... ],
   "contextMap": { ... },
   "userStories": [
     {
       "id": "US001",
       "title": "Write Introduction",
-      "description": "Create compelling introduction",
-      "section": "intro",
       "acceptanceCriteria": [
         "Read problem statement",
         "Read background.bib",
-        "Write 300-500 words",
-        "Include problem overview"
+        "Write 300-500 words"
       ],
       "priority": 1,
       "passes": false
     }
-    // ... more stories
   ]
 }
 ```
 
-### Phase 9: Validate PRD
+### Phase 9: Show PRD to User and Get Confirmation
+
+**AI Displays the PRD:**
+```
+Here's my plan to complete your project:
+
+STRUCTURE:
+- 6 sections to write (Introduction, Literature, Methodology, Results, Discussion, Conclusion)
+- Using: Quarto Authoring + Quarto rendering
+
+RESOURCES I'll READ:
+- Code: src/experiment1.py, src/experiment2.py, src/experiment3.py
+- Data: Data/Experiment1/results.json, Data/Experiment2/results.json, etc.
+- References: References/methodology.bib, References/background.bib
+
+REQUIRED SKILLS:
+✓ QMD formatting and editing (have: Quarto Authoring)
+✓ Document compilation (have: Quarto)
+✓ Bibliography management
+
+Does this look right? (yes/no/adjust)
+```
+
+**User responds:**
+- ✓ "Yes, start" → Go to Phase 10
+- ✗ "Wait, add XXX" → AI adjusts PRD and shows again
+- ✗ "The contextMap is wrong" → AI fixes and re-shows
+
+**This is critical**: Get user approval before automation begins.
+
+### Phase 10: Validate PRD
 
 **AI Checks:**
 - [ ] All referenced files exist
@@ -206,7 +231,7 @@ For the project, identify what capabilities are needed:
 - [ ] No circular dependencies
 - [ ] All stories have `passes: false`
 
-### Phase 10: Run Ralph
+### Phase 11: Run Ralph
 
 **AI Executes:**
 ```bash
@@ -214,14 +239,14 @@ ralph.mjs create --prd generated_prd.json --start
 ralph.mjs logs <session-id> --follow
 ```
 
-### Phase 11: Monitor Progress
+### Phase 12: Monitor Progress
 
 **AI Watches:**
 - Check logs periodically
 - If Ralph gets stuck, inject guidance
 - If issues arise, adjust contextMap or user stories
 
-### Phase 12: On Completion
+### Phase 13: On Completion
 
 **AI Handles:**
 - Verify all stories are complete

@@ -1,21 +1,8 @@
 # Ralph PRD Generator - Guide for AI Systems
 
-This guide helps AI systems automatically generate PRDs (Project Requirements Documents) for Ralph.
+This guide helps AI systems automatically analyze projects and generate PRDs (Project Requirements Documents) for Ralph.
 
-## When to Generate a PRD
-
-When a user says something like:
-- "Use Ralph to write my MCM paper"
-- "Use Ralph to refactor this code"
-- "Use Ralph to analyze this dataset"
-- Any request that involves multi-step work with files and resources
-
-**Your AI should:**
-1. Ask clarifying questions if needed
-2. Analyze the project structure
-3. Identify available skills
-4. Generate a complete PRD
-5. Run Ralph with that PRD
+**Note**: This is the technical guide for AI systems. Users don't need to read this - they just tell their AI "use Ralph" and the AI handles PRD generation automatically.
 
 ## PRD Generation Workflow
 
@@ -223,9 +210,25 @@ Generated PRD:
 - userStories: One per section + one for final assembly
 ```
 
+## Before Running Ralph
+
+**Important**: After generating a PRD, show it to the user for confirmation before executing Ralph.
+
+The user should see:
+- **Description**: What will Ralph do?
+- **Task Type**: What category of work?
+- **Outline**: What are the steps?
+- **Resources**: What files will be read?
+- **Skills**: What capabilities will be used?
+- **Stories**: What will be accomplished?
+
+Ask: "Does this plan look good? Approve to proceed, or tell me what to adjust."
+
+This prevents Ralph from executing a poorly-generated plan.
+
 ## Validation Checklist
 
-Before running Ralph with a generated PRD, verify:
+Before showing the PRD to user, verify:
 
 - [ ] All files referenced in contextMap exist
 - [ ] File paths are correct
