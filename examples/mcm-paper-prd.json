@@ -11,8 +11,9 @@
     { "id": "conclusion", "title": "Conclusion", "section": 6 }
   ],
   "requiredSkills": [
-    "qmd-writing",
-    "qmd-rendering"
+    "QMD formatting and mathematical notation support",
+    "Figure and visualization insertion",
+    "Document compilation and rendering"
   ],
   "contextMap": {
     "intro": {

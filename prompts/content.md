@@ -55,18 +55,21 @@ This PRD involves creating content: documentation, blogs, articles, guides, pape
 
 If the PRD specifies `requiredSkills`:
 
-1. **Read skill documentation** before using
-2. **Call skill appropriately** when:
-   - Implementing special formatting (QMD, LaTeX, etc.)
+1. **Understand what's needed** - Read the skill descriptions
+   - Example: "QMD formatting and mathematical notation support"
+   - Your AI will identify which of its skills can help
+2. **Call skills appropriately** when:
+   - Implementing special formatting (equations, code blocks, etc.)
    - Inserting figures, tables, or cross-references
    - Testing compilation or rendering
    - Debugging format issues
 
-3. **Example skill usage**:
-   ```
-   Use the qmd-writing skill to format this code block correctly
-   Use the qmd-rendering skill to verify the figure renders properly
-   ```
+3. **How your AI will help**:
+   - Your AI sees: "needs QMD formatting"
+   - Your AI thinks: "I have a qmd-writing skill that does that"
+   - Your AI calls qmd-writing when formatting content
+
+The PRD doesn't specify exact skill names. Your AI is smart enough to match the need (e.g., "QMD formatting") to the right skill it has available.
 
 ## Quality Requirements
 

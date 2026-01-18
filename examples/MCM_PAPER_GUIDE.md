@@ -42,7 +42,25 @@ mcm-paper/
 
 ## Key Concepts
 
-### contextMap
+### requiredSkills - Declarative Capability Needs
+
+The `requiredSkills` field describes what capabilities the project needs:
+
+```json
+"requiredSkills": [
+  "QMD formatting and mathematical notation support",
+  "Figure and visualization insertion",
+  "Document compilation and rendering"
+]
+```
+
+**How it works:**
+- Ralph declares what it needs (e.g., "QMD formatting support")
+- Your AI reads this and says "I have a qmd-writing skill that does that"
+- Your AI automatically calls the right skill when needed
+- Different AI systems can use different skill names - it's flexible
+
+Ralph doesn't hardcode skill names. It describes what's needed, and your AI figures out what it has available.
 
 The `contextMap` in the PRD tells Ralph what to read before writing each section:
 

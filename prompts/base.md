@@ -56,17 +56,18 @@ If the PRD has a `contextMap` field:
 
 If the PRD specifies `requiredSkills`:
 
-1. **Before starting work**: Understand what each skill does
-2. **During writing**: Call skills at appropriate times
-   - When formatting code or special syntax
-   - When inserting figures, tables, or media
-   - When needing to compile/preview/debug output
+1. **Before starting work**: Understand what each skill description means
+   - The PRD describes what's needed, not specific skill names
+   - Example: "Figure rendering and validation" not "figrender skill"
+2. **During execution**: Call skills when needed for those capabilities
+   - When formatting special syntax or media
+   - When needing to test or validate output
+   - When complex operations are needed
 
-3. **How to call a skill**:
-   ```
-   Call the [skill-name] skill with: [action] [parameters]
-   Or: Use the skill to [action]
-   ```
+3. **Your AI will help**:
+   - Your AI knows what skills it has
+   - It matches the descriptions in `requiredSkills` to its available skills
+   - It calls the right skill at the right time
 
 ## Progress Report Format
 
